@@ -22,9 +22,7 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
                 stage4().call()
-            }
         }
     }
 

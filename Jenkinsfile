@@ -41,19 +41,12 @@ pipeline {
     }
 }
 
-def environment (){
-    return 
-    {
-        environment {
-        STAGE_3="Stage 3"
-    }
-    }
-}
+
+
 def stage4() {
     return {
          stage('Stage 4') {
-    
-                steps {
+            steps {
                 echo "Stage 4"
             }
         }

@@ -17,7 +17,9 @@ pipeline {
                 echo "${STAGE_3}"
             }
         }
+        script{
         stage4()
+        }
     }
 
     post {

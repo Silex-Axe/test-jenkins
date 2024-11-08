@@ -1,8 +1,10 @@
 pipeline {
     agent any
-    
-    environment {
-        STAGE_3="Stage 3"
+
+    environment()
+
+    node {
+        def exampleModule = load "${workspace}@script/environment.groovy "
     }
 
     stages {
@@ -17,7 +19,7 @@ pipeline {
             }
         }
 
-        stage('Docker Image') {
+        stage('Stage 3') {
             steps {
                 echo "${STAGE_3}"
             }
@@ -28,7 +30,6 @@ pipeline {
     post {
         always {
             // Archive test results and cleanup
-            junit '**/test-reports/*.xml'
             cleanWs()
         }
 
@@ -37,4 +38,18 @@ pipeline {
             echo "Pipeline failed"
         }
     }
+}
+
+def environment (){
+    environment {
+        STAGE_3="Stage 3"
+    }
+}
+def stage4(){
+
+ stage('Stage 4') {
+            steps {
+                echo "Stage 4"
+            }
+        }
 }

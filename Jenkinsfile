@@ -1,20 +1,15 @@
 pipeline {
     agent any
 
-    
-
-        node {
-        //environment().call()
-        stage4().call()
-        stages {
+    stages {
         stage('Stage 1') {
             steps {
-                echo 'Stage 1'
+                echo 'Stagee 1'
             }
         }
         stage('Stage 2') {
             steps {
-                echo 'Stage 2'
+                echo 'Stagee 2'
             }
         }
 
@@ -23,6 +18,11 @@ pipeline {
                 echo "${STAGE_3}"
             }
         }
+
+        stage('Test') {
+            steps {
+                stage4()
+            }
         }
     }
 
@@ -34,18 +34,15 @@ pipeline {
 
         failure {
             // Notify on failure (email, Slack, etc.)
-            echo "Pipeline failed"
+            echo 'Pipeline failed'
         }
     }
 }
-
-
-
 def stage4() {
     return {
-         stage('Stage 4') {
+        stage('Stage 4') {
             steps {
-                echo "Stage 4"
+                echo 'Stagee 4'
             }
         }
     }

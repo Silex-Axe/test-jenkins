@@ -1,5 +1,11 @@
 pipeline {
     agent any
+
+    node {
+        //environment().call()
+        stage4().call()
+    }
+
     stages {
         stage('Stage 1') {
             steps {
@@ -36,15 +42,19 @@ pipeline {
 }
 
 def environment (){
-    environment {
+    return 
+    {
+        environment {
         STAGE_3="Stage 3"
+    }
     }
 }
 def stage4(){
-
  stage('Stage 4') {
-            steps {
+        return{
+                steps {
                 echo "Stage 4"
             }
         }
+    }
 }

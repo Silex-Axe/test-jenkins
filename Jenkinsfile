@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment {
+        STAGE_3="Stagee 3"
+    }
     stages {
         stage('Stage 1') {
             steps {

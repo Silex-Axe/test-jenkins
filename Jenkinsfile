@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        STAGE_3="Stagee 3"
+        STAGE_3 = 'Stagee 3'
     }
     stages {
         stage('Stage 1') {
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                stage4()
+                stage4().call()
             }
         }
     }
@@ -40,6 +40,7 @@ pipeline {
         }
     }
 }
+
 def stage4() {
     return {
         stage('Stage 4') {

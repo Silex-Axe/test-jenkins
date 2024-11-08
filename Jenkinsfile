@@ -3,11 +3,10 @@ pipeline {
 
     
 
-    stages {
         node {
         //environment().call()
         stage4().call()
-    }
+        stages {
         stage('Stage 1') {
             steps {
                 echo 'Stage 1'
@@ -23,6 +22,7 @@ pipeline {
             steps {
                 echo "${STAGE_3}"
             }
+        }
         }
     }
 

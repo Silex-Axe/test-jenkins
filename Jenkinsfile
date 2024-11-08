@@ -49,9 +49,10 @@ def environment (){
     }
     }
 }
-def stage4(){
- stage('Stage 4') {
-        return{
+def stage4() {
+    return {
+         stage('Stage 4') {
+    
                 steps {
                 echo "Stage 4"
             }

@@ -1,12 +1,5 @@
 pipeline {
     agent any
-
-    environment()
-
-    node {
-        def exampleModule = load "${workspace}@script/environment.groovy "
-    }
-
     stages {
         stage('Stage 1') {
             steps {
@@ -24,7 +17,7 @@ pipeline {
                 echo "${STAGE_3}"
             }
         }
-        
+        stage4()
     }
 
     post {
